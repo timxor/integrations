@@ -19,7 +19,6 @@ token = "ATATT3xFfGF0P1yh-d4n4dExXImx9GoTBk5azzjucSOmJnfLV5aRrT6Fnjoaehs3pYCoiJV
 
 ```
 mvn clean install
-
 mvn spring-boot:run
 ```
 
