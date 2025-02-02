@@ -14,6 +14,22 @@ i.e.
 token = "ATATT3xFfGF0P1yh-d4n4dExXImx9GoTBk5azzjucSOmJnfLV5aRrT6Fnjoaehs3pYCoiJVU7qvAu04k9HE-1suWAv1n4rncMTPveLHDpVhkK06cnQ4EohkzbnpgScAM4nnR7xcZslAeFgE5ojsmco2yNRa6kamH313En0RxbXFTQ8qDNB_Ar"
 ```
 
+set:
+
+`export CONFLUENCE_API_TOKEN="YOUR-API-TOKEN"`
+
+get:
+
+`echo $CONFLUENCE_API_TOKEN`
+
+
+### application.properties
+confluence.api-token=${CONFLUENCE_API_TOKEN}
+
+String apiToken = System.getenv("CONFLUENCE_API_TOKEN");
+
+
+
 
 ## run with maven:
 
