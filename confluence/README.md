@@ -26,7 +26,7 @@ get:
 ### application.properties
 confluence.api-token=${CONFLUENCE_API_TOKEN}
 
-String apiToken = System.getenv("CONFLUENCE_API_TOKEN");
+`String apiToken = System.getenv("CONFLUENCE_API_TOKEN");`
 
 
 
@@ -38,10 +38,22 @@ mvn clean install
 mvn spring-boot:run
 ```
 
+
 go to url:
 
 http://localhost:8080
 
+
+
+## api endpoints:
+
+get spaces:
+
+`curl -v http://localhost:8080/spaces`
+
+create a page:
+
+`curl -v -X POST http://localhost:8080/createPage/TEST/MyPage`
 
 
 
@@ -55,14 +67,14 @@ ls -lb target/*.jar
 java -jar target/confluenceIntegrationDemo-0.0.1-SNAPSHOT.jar
 ```
 
-## java version 23:
+## java version 17:
 
 ```
-sdk install java 23.0.2-oracle\n
+sdk install java 17.0.12-oracle\n
 
-sdk use java 23.0.2-oracle\n
+sdk use java 17.0.12-oracle\n
 
-sdk default java 23.0.2-oracle\n
+sdk default java 17.0.12-oracle\n
 
 java --version
 ```

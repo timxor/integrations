@@ -2,6 +2,7 @@ package com.integrations.confluence.confluenceIntegrationDemo;
 
 import okhttp3.*;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -11,10 +12,23 @@ import java.util.Base64;
 public class ConfluenceClient {
 
     private final OkHttpClient httpClient = new OkHttpClient();
-    // Optionally inject your credentials or read them from application.properties
-    private final String confluenceUrl = "https://<your-site>.atlassian.net/wiki";
-    private final String username = "you@company.com";
-    private final String apiToken = "<your-api-token>";
+
+    // defined in /resources/application.properties
+    @Value("${confluence.user}")
+    private String username;
+    // private final String username = "siwulactim@gmail.com";
+
+    // defined in /resources/application.properties
+    // but set in ~/.zshrc to not commit api key to github ;)
+    @Value("${confluence.api-token}")
+    private String apiToken;
+    // private final String apiToken = System.getenv("CONFLUENCE_API_TOKEN");
+
+    // defined in /resources/application.properties
+    @Value("${confluence.url}")
+    private String confluenceUrl;
+    // private final String confluenceUrl = "https://siwulactim.atlassian.net/wiki";
+
     private final String authHeader;
 
     public ConfluenceClient() {
